@@ -1,12 +1,13 @@
 import java.util.ArrayList;
 import java.util.List;
-
+//Poner abstract de nuevo al acabar
 public abstract class Herramienta {
     private final String marca;
     private final String nombre;
     private final String descripcion;
     private int precio;
     private List<Accesorio> accesorios = new ArrayList<>();
+
 
     Herramienta(String marca, String nombre, String descripcion, int precio){
         this.marca=marca;

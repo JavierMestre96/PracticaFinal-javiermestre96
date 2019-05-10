@@ -1,10 +1,5 @@
 public class Accesorio{
     private final String nombre;
-    private final Tipo tipo = Tipo.ACCESORIO;
-
-    public Tipo getTipo() {
-        return tipo;
-    }
 
     public Accesorio(String nombre) {
         this.nombre = nombre;

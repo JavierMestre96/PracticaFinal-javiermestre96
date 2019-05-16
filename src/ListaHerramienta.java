@@ -19,14 +19,9 @@ public class ListaHerramienta implements Utilizable{
         ventana.setLayout(new BorderLayout());
         if (tipo.equals("ELECTRICA")){
             ventana.add(new PanelHerramientaElectrica(),BorderLayout.CENTER);
-            ventana.pack();
-            ventana.dispose();
-            ventana.setVisible(true);
+
         }else{
             ventana.add(new PanelHerramientaManual(),BorderLayout.CENTER);
-            ventana.pack();
-            ventana.dispose();
-            ventana.setVisible(true);
         }
     }
 

@@ -5,6 +5,8 @@ import java.awt.event.ActionListener;
 
 public class PanelHerramientaElectrica extends Panel {
 
+    Electrica e;
+
     JLabel potencia = new JLabel("Potencia en vatios: ");
     JTextField potenciaW = new JTextField(new Integer(0));
     JButton creaHerramienta = new JButton("Añadir herramienta");
@@ -25,6 +27,7 @@ public class PanelHerramientaElectrica extends Panel {
                     if("".equals(marca)){
                         JOptionPane.showMessageDialog(null,"Marca no puede estar vacía");
                         System.out.println("ERROR");
+                        getMarcaH().grabFocus();
                     }
                 }catch (NumberFormatException nfe){
                     JOptionPane.showMessageDialog(null,"Introduce un precio válido");
@@ -34,5 +37,10 @@ public class PanelHerramientaElectrica extends Panel {
         });
         add(creaHerramienta,BorderLayout.SOUTH);
 
+    }
+
+    public Herramienta getHerramienta() {
+        e=new Electrica(getMarcaH().getText(),)
+        return e;
     }
 }

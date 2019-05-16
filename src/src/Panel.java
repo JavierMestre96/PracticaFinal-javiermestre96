@@ -2,7 +2,7 @@ import javax.swing.*;
 import javax.swing.border.Border;
 import java.awt.*;
 
-public class Panel extends JPanel {
+public abstract class Panel extends JPanel {
     private JLabel marcaHerramienta = new JLabel("Marca de la herramienta: ");
     private JFormattedTextField marcaH = new JFormattedTextField();
     private JLabel nombreHerramienta = new JLabel("Nombre de la herramienta: ");
@@ -11,7 +11,7 @@ public class Panel extends JPanel {
     private JFormattedTextField precioH = new JFormattedTextField();
     private JLabel descripcionHerramienta = new JLabel("Descripcion de la Herramienta: ");
     private JTextArea descripcionH = new JTextArea();
-    private JPanel panelEtiquetas = new JPanel();
+    protected JPanel panelEtiquetas = new JPanel();
 
     Panel(){
         panelEtiquetas.setLayout(new GridLayout(0,2));

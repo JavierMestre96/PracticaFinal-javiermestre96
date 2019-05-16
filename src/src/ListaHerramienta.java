@@ -1,6 +1,7 @@
 import jdk.nashorn.internal.scripts.JO;
 
 import javax.swing.*;
+import java.awt.*;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
@@ -13,10 +14,23 @@ public class ListaHerramienta implements Utilizable{
     }
 
     public void anyadeHerramienta(){
-        tipoHerramienta();
+        String tipo = tipoHerramienta();
+        Ventana ventana = new Ventana();
+        ventana.setLayout(new BorderLayout());
+        if (tipo.equals("ELECTRICA")){
+            ventana.add(new PanelHerramientaElectrica(),BorderLayout.CENTER);
+            ventana.pack();
+            ventana.dispose();
+            ventana.setVisible(true);
+        }else{
+            ventana.add(new PanelHerramientaManual(),BorderLayout.CENTER);
+            ventana.pack();
+            ventana.dispose();
+            ventana.setVisible(true);
+        }
     }
 
-    public void tipoHerramienta(){
+    public String tipoHerramienta(){
         List<String> tipos = new ArrayList<>();
         tipos.add("ELECTRICA");
         tipos.add("MANUAL");
@@ -28,7 +42,7 @@ public class ListaHerramienta implements Utilizable{
                 null,
                 tipos.toArray(),
                 tipos.get(0));
-        System.out.println(tipo);
+        return tipo;
     }
 }
 

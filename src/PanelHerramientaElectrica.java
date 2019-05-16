@@ -16,14 +16,16 @@ public class PanelHerramientaElectrica extends Panel {
         creaHerramienta.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-                try{
+                try {
                     String marca = getMarcaH().getText();
                     String nombre = getNombreH().getText();
                     String descripcion = getDescripcionH().getText();
                     double precio = Double.parseDouble(getPrecioH().getText());
                     int potencia = Integer.parseInt(potenciaW.getText());
-                }catch (NullPointerException npe){
-                    JOptionPane.showMessageDialog(null,"ERROR. Uno o más campos están vacios.");
+                    if("".equals(marca)){
+                        JOptionPane.showMessageDialog(null,"Marca no puede estar vacía");
+                        System.out.println("ERROR");
+                    }
                 }catch (NumberFormatException nfe){
                     JOptionPane.showMessageDialog(null,"Introduce un precio válido");
                 }

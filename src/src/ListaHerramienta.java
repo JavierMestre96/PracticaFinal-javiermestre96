@@ -15,7 +15,7 @@ public class ListaHerramienta implements Utilizable{
 
     public void anyadeHerramienta(){
         String tipo = tipoHerramienta();
-        Ventana ventana = new Ventana();
+        JDialog ventana = new JDialog();
         ventana.setLayout(new BorderLayout());
         if (tipo.equals("ELECTRICA")){
             ventana.add(new PanelHerramientaElectrica(),BorderLayout.CENTER);

@@ -6,6 +6,7 @@ import java.awt.event.ActionListener;
 
 public class PanelHerramientaManual extends Panel {
 
+        Manual m;
         JLabel etiquetaMecanismo = new JLabel("Tipo de mecanismo: ");
         JFormattedTextField mecanismoH = new JFormattedTextField();
         JButton creaHerramienta = new JButton("Añadir herramienta");
@@ -33,7 +34,10 @@ public class PanelHerramientaManual extends Panel {
             add(creaHerramienta,BorderLayout.SOUTH);
         }
 
-
+    public Herramienta getHerramienta() {
+       m=new Manual(getMarcaH().getText(),getNombreH().getText(),getDescripcionH().getText(),Double.parseDouble(getPrecioH().getText()),mecanismoH.getText());
+        return m;
+    }
 
 
 

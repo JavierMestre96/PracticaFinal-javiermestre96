@@ -1,7 +1,7 @@
 public class Electrica extends Herramienta{
     private final int potencia;
 
-    Electrica(String marca, String nombre, String descripcion, int precio, int potencia){
+    Electrica(String marca, String nombre, String descripcion, double precio, int potencia){
         super(marca,nombre,descripcion,precio);
         this.potencia=potencia;
     }

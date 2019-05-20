@@ -1,7 +1,7 @@
 public class Manual extends Herramienta {
     private final String mecanismo;
 
-    public Manual(String marca, String nombre, String descripcion, int precio, String mecanismo) {
+    public Manual(String marca, String nombre, String descripcion, double precio, String mecanismo) {
         super(marca, nombre, descripcion, precio);
         this.mecanismo = mecanismo;
     }

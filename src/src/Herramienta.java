@@ -8,11 +8,25 @@ public abstract class Herramienta {
     private final String descripcion;
     private double precio;
 
-    Herramienta(String marca, String nombre, String descripcion, int precio){
+    Herramienta(String marca, String nombre, String descripcion, double precio){
+        compruebaMarca(marca);
+        compruebaNombre(nombre);
+
         this.marca=marca;
         this.nombre=nombre;
         this.descripcion=descripcion;
-        this.precio=precio/100;
+        this.precio=precio;
+    }
+
+    public void compruebaMarca(String marca){
+        if ("".equals(marca)){
+            throw new IllegalArgumentException("Marca no válida");
+        }
+    }
+    public void compruebaNombre(String nombre){
+        if ("".equals(nombre)){
+            throw new IllegalArgumentException("Nombre no válido.");
+        }
     }
 
     public String getMarca() {

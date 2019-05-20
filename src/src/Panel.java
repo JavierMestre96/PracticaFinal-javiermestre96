@@ -4,13 +4,13 @@ import java.awt.*;
 
 public abstract class Panel extends JPanel {
     private JLabel marcaHerramienta = new JLabel("Marca de la herramienta: ");
-    private JFormattedTextField marcaH = new JFormattedTextField();
+    private JFormattedTextField marcaH = new JFormattedTextField("");
     private JLabel nombreHerramienta = new JLabel("Nombre de la herramienta: ");
-    private JFormattedTextField nombreH = new JFormattedTextField();
+    private JFormattedTextField nombreH = new JFormattedTextField("");
     private JLabel precioHerramienta = new JLabel("Precio de la Herramienta: ");
-    private JFormattedTextField precioH = new JFormattedTextField();
+    private JFormattedTextField precioH = new JFormattedTextField("");
     private JLabel descripcionHerramienta = new JLabel("Descripcion de la Herramienta: ");
-    private JTextArea descripcionH = new JTextArea();
+    private JTextArea descripcionH = new JTextArea("");
     protected JPanel panelEtiquetas = new JPanel();
 
     Panel(){

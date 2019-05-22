@@ -26,6 +26,7 @@ public class VentanaOpciones extends JDialog {
                         double precio = Double.parseDouble(panel.getPrecioH().getText());
                         int potencia = Integer.parseInt(panel.potenciaW.getText());
                         h=panel.getHerramienta();
+                        dispose();
                     }catch (NullPointerException npe){
                         JOptionPane.showMessageDialog(null,"ERROR. Uno o más campos están vacios.");
                     }catch (NumberFormatException nfe){
@@ -48,6 +49,7 @@ public class VentanaOpciones extends JDialog {
                         double precio = Double.parseDouble(panel.getPrecioH().getText());
                         String mecanismo = panel.mecanismoH.getText();
                         h=panel.getHerramienta();
+                        dispose();
                     }catch (NullPointerException npe){
                         JOptionPane.showMessageDialog(null,"ERROR. Uno o más campos están vacios.");
                     }catch (NumberFormatException nfe){

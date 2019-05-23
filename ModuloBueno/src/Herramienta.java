@@ -62,6 +62,14 @@ public abstract class Herramienta {
         this.precio = precio;
     }
 
+    public String info(){
+        String info="";
+        info+=this.nombre+" "+this.marca+"\n";
+        info+=this.descripcion+"\n";
+        info+=this.precio+"€\n";
+        return info;
+    }
+
     @Override
     public String toString() {
         return "Herramienta{" +

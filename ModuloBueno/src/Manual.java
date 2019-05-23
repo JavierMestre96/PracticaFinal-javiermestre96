@@ -11,6 +11,13 @@ public class Manual extends Herramienta {
     }
 
 
+    public String info(){
+        String informacion="HERRAMIENTA MANUAL\n";
+        informacion+=super.info();
+        informacion+="Mecanismo: "+this.mecanismo;
+        return informacion;
+    }
+
     @Override
     public String toString() {
         return super.toString() +

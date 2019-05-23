@@ -24,7 +24,13 @@ public class ListaHerramienta implements Utilizable{
 
 
     public String muestraTodos(){
-        return lista.stream().map(Objects::toString).collect(Collectors.joining("\n"));
+        String salida="";
+
+        for (Herramienta h: lista) {
+            salida+=h.info()+"\n";
+        }
+
+        return salida;
     }
 
     public void anyadeHerramienta(){

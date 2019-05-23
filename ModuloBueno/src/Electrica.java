@@ -18,11 +18,9 @@ public class Electrica extends Herramienta{
     }
 
     public String info(){
-        String informacion="";
-        informacion+="HERRAMIENTA ELÉCTRICA: "+this.getNombre()+" "+this.getMarca()+"\n";
-        informacion+=this.getDescripcion()+"\n";
+        String informacion="HERRAMIENTA ELECTRICA\n";
+        informacion += super.info();
         informacion+="Potencia: "+this.potencia+" V\n";
-        informacion+="Precio: "+this.getPrecio()+" €\n";
         return informacion;
     }
 

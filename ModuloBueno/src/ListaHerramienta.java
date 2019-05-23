@@ -5,6 +5,8 @@ import java.awt.*;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
+import java.util.stream.Collectors;
 
 public class ListaHerramienta implements Utilizable{
     private List<Herramienta> lista;
@@ -18,6 +20,11 @@ public class ListaHerramienta implements Utilizable{
 
     public ListaHerramienta() {
         lista=new ArrayList<>();
+    }
+
+
+    public String muestraTodos(){
+        return lista.stream().map(Objects::toString).collect(Collectors.joining("\n"));
     }
 
     public void anyadeHerramienta(){
@@ -38,12 +45,6 @@ public class ListaHerramienta implements Utilizable{
                 tipos.toArray(),
                 tipos.get(0));
         return tipo;
-    }
-
-    public static void main(String[] args) {
-        ListaHerramienta lista = new ListaHerramienta();
-        lista.anyadeHerramienta();
-        System.out.println(lista);
     }
 }
 

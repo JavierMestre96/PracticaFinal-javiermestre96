@@ -21,20 +21,26 @@ public class PruebaHerramienta {
 //        ventana.pack();
 //        ventana.setVisible(true);
 
+        ListaHerramienta lista = new ListaHerramienta();
         JDialog pideHerramienta=new JDialog();
         pideHerramienta.setLayout(new FlowLayout());
-        PanelHerramientaElectrica ventanaHerramienta=new PanelHerramientaElectrica();
-        pideHerramienta.add(ventanaHerramienta);
-        JButton boton =new JButton("Aceptar");
+        JButton boton =new JButton("Añadir herramienta");
+        JButton boton2 = new JButton("Ver lista");
         boton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 //Comprobar si vale();
-                Herramienta h=ventanaHerramienta.getHerramienta();
-                pideHerramienta.dispose();
+                lista.anyadeHerramienta();
+            }
+        });
+        boton2.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                JOptionPane.showMessageDialog(null,lista.muestraTodos());
             }
         });
         pideHerramienta.add(boton);
+        pideHerramienta.add(boton2);
         pideHerramienta.pack();
         pideHerramienta.setVisible(true);
     }

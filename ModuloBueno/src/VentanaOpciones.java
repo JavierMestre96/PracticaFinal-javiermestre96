@@ -3,7 +3,6 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-//Boton en Jdialog solamente, paneles no
 public class VentanaOpciones extends JDialog {
     private ListaHerramienta lista = new ListaHerramienta();
     private String tipoHerramienta = lista.tipoHerramienta();

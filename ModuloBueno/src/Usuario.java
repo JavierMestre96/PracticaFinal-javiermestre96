@@ -1,4 +1,4 @@
-public class Usuario {
+public class Usuario implements Comparable<Usuario>{
     private final String usuario;
     private String nombre;
     private String apellidos;
@@ -6,9 +6,10 @@ public class Usuario {
 
     public Usuario(String usuario, String nombre, String apellidos, String email) {
         this.usuario = usuario;
-        this.nombre = nombre;
-        this.apellidos = apellidos;
-        this.email = email;
+    }
+
+    public Usuario(String usuario) {
+        this.usuario = usuario;
     }
 
     public String getUsuario() {
@@ -27,13 +28,22 @@ public class Usuario {
         this.email = email;
     }
 
-    public Usuario(String usuario) {
-        this.usuario = usuario;
-    }
-
     public String getNombre() {
         return nombre;
     }
 
+    @Override
+    public String toString() {
+        return "Usuario{" +
+                "usuario='" + usuario + '\'' +
+                ", nombre='" + nombre + '\'' +
+                ", apellidos='" + apellidos + '\'' +
+                ", email='" + email + '\'' +
+                '}';
+    }
 
+    @Override
+    public int compareTo(Usuario o) {
+        return o.getUsuario().compareTo(this.getUsuario());
+    }
 }

@@ -10,7 +10,7 @@ public class VentanaNuevoUsuario extends JDialog {
     JButton anyadir = new JButton("Añadir usuario");
 
     VentanaNuevoUsuario(){
-        setTitle("Añadir nuevo usuario: ");
+        setTitle("Añadir nuevo usuario");
         setLayout(new BorderLayout());
         add(panel,BorderLayout.CENTER);
         add(anyadir, BorderLayout.SOUTH);
@@ -18,6 +18,8 @@ public class VentanaNuevoUsuario extends JDialog {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
                 lista.anyadeUsuario(VentanaUsuario.getDatosLeidos(),panel.getNombreU().getText(),panel.getApellidosU().getText(),panel.getEmailU().getText());
+                dispose();
+                ListaHerramientaUsuario l = new ListaHerramientaUsuario();
             }
         });
         pack();

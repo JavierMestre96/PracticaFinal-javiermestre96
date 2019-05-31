@@ -1,4 +1,5 @@
 import java.io.*;
+import java.nio.file.Paths;
 import java.util.Set;
 import java.util.TreeSet;
 
@@ -38,7 +39,8 @@ public class ListaUsuarios {
     public boolean compruebaLista(String usuarioIntroducido){
         Usuario u2 = new Usuario(usuarioIntroducido);
         for (Usuario u: lista) {
-            if (u.getUsuario().equals(u2.getUsuario())){
+            int posicionUsuario = u.getUsuario().indexOf(":");
+            if (u.getUsuario().substring(0,posicionUsuario).equals(u2.getUsuario())){
                 return true;
             }
         }
@@ -46,7 +48,7 @@ public class ListaUsuarios {
     }
 
     public void anyadeUsuario(String usuario, String nombre, String apellidos, String email){
-       try{
+        try{
             fw = new FileWriter(fichero,true);
             pw = new PrintWriter(fw);
             pw.println(usuario+":"+nombre+":"+apellidos+":"+email);
@@ -72,6 +74,6 @@ public class ListaUsuarios {
 
     public static void main(String[] args) {
         ListaUsuarios l = new ListaUsuarios();
-        System.out.println(l.compruebaLista("2222222222"));
+        System.out.println(l.compruebaLista("1122334455"));
     }
 }

@@ -1,8 +1,11 @@
+import java.util.Date;
+
 public class Usuario implements Comparable<Usuario>{
     private final String usuario;
     private String nombre;
     private String apellidos;
     private String email;
+    private Date fechaNacimiento;
 
     public Usuario(String usuario, String nombre, String apellidos, String email) {
         this.usuario = usuario;

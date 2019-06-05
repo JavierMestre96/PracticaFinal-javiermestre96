@@ -1,3 +1,5 @@
+import java.io.Serializable;
+
 public class Electrica extends Herramienta{
     private final int potencia;
 

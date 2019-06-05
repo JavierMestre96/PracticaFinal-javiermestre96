@@ -44,7 +44,6 @@ public class VentanaUsuario extends JFrame {
                 ListaHerramientaUsuario l = new ListaHerramientaUsuario();
             }
         }
-        dispose();
     }
 
 }

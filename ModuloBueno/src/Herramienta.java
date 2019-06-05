@@ -1,8 +1,9 @@
 import java.io.IOException;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 //Poner abstract de nuevo al acabar
-public abstract class Herramienta {
+public abstract class Herramienta implements Serializable {
     private final String marca;
     private final String nombre;
     private final String descripcion;

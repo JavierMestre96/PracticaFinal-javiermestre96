@@ -4,6 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.io.*;
 import java.lang.reflect.Array;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -14,8 +15,6 @@ public class ListaHerramienta implements Utilizable,Serializable{
 
     private File archivoGuardado;
 
-    private ObjectInputStream ois;
-    private ObjectOutputStream oos;
     public ListaHerramienta() {
         lista=new ArrayList<>();
     }
@@ -62,22 +61,18 @@ public class ListaHerramienta implements Utilizable,Serializable{
     }
 
     public void existeFichero(String nombre){
-        archivoGuardado = new File(nombre);
+        archivoGuardado = Paths.get(nombre).toFile();
         if (archivoGuardado.exists()){
             ListaHerramienta nuevaLista;
-            try {
-                ois = new ObjectInputStream(new FileInputStream((archivoGuardado)));
+            try(ObjectInputStream ois = new ObjectInputStream(new FileInputStream(archivoGuardado))){
                 nuevaLista = (ListaHerramienta) ois.readObject();
                 this.lista = nuevaLista.getLista();
-                ois.close();
             } catch (Exception e){
-                System.out.println(e.getMessage());
+                e.printStackTrace();
             }
         }else{
-            try {
-                oos = new ObjectOutputStream(new FileOutputStream(archivoGuardado));
+            try(ObjectOutputStream oos =new ObjectOutputStream(new FileOutputStream(archivoGuardado))) {
                 oos.writeObject(this.lista);
-                oos.close();
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -85,15 +80,12 @@ public class ListaHerramienta implements Utilizable,Serializable{
     }
 
     public void guardaListaFichero(String nombre) throws IOException {
-        archivoGuardado = new File(nombre);
-        try {
-                oos = new ObjectOutputStream(new FileOutputStream(archivoGuardado));
+        archivoGuardado = Paths.get(nombre).toFile();
+        try(ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(archivoGuardado))){
                 oos.writeObject(this);
-                oos.close();
             }catch (Exception e){
                 System.out.println(e.getMessage());
             }
-    System.out.println(muestraTodos());
     }
 
     public List<Herramienta> getLista() {

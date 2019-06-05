@@ -1,4 +1,6 @@
-public class Manual extends Herramienta {
+import java.io.Serializable;
+
+public class Manual extends Herramienta{
     private final String mecanismo;
 
     public Manual(String marca, String nombre, String descripcion, double precio, String mecanismo) {
